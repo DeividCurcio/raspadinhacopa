@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspadinha da Copa 2026 • Click Vest Lingerie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700&amp;display=swap');
+        :root {
+            --yellow: #FFD700;
+            --green: #009739;
+        }
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        .title-font {
+            font-family: 'Poppins', system_ui, sans-serif;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        .scratch-card {
+            background: linear-gradient(145deg, #f8fafc, #e0e7ff);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25),
+                        0 10px 10px -6px rgb(0 0 0 / 0.1);
+            border: 12px solid #1e2937;
+        }
+        .panel {
+            border: 3px solid #1e2937;
+            box-shadow: inset 0 0 0 4px #64748b,
+                        0 10px 15px -3px rgb(0 0 0 / 0.3);
+            cursor: crosshair;
+            touch-action: none;
+            background: #cbd5e1;
+        }
+        .win-modal {
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .brazil-gradient {
+            background: linear-gradient(90deg, #009739, #FFD700, #009739);
+            background-size: 200% 100%;
+            animation: brazilMove 3s linear infinite;
+        }
+        @keyframes brazilMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .soccer-bg {
+            background-image:
+                radial-gradient(circle at 25% 30%, rgba(255,215,0,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 75% 70%, rgba(0,151,57,0.15) 0%, transparent 50%);
+        }
+        @keyframes popIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+    <div class="bg-zinc-900 border-b border-zinc-800">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-12 h-12">
+                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#c026ff"/>
+                                <stop offset="50%" stop-color="#f43f5e"/>
+                                <stop offset="100%" stop-color="#f59e0b"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="46" fill="url(#logoGrad)" stroke="#fff" stroke-width="6"/>
+                        <path d="M35 38 Q50 28 65 38 Q55 48 50 55 Q45 48 35 38" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M38 42 Q50 35 62 42" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+                        <circle cx="50" cy="52" r="4" fill="#fff"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-bold text-2xl tracking-tighter">Chick Vest</span>
+                    <span class="text-emerald-400 text-sm font-medium block -mt-1">Lingerie</span>
+                </div>
+            </div>
+            <div class="px-4 py-1.5 bg-white/10 rounded-2xl text-sm font-medium flex items-center gap-x-2">
+                <i class="fa-solid fa-globe text-emerald-400"></i>
+                <span class="text-emerald-300">Promoção Oficial</span>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-x-2 px-4 py-1 bg-yellow-500 text-yellow-950 rounded-full text-sm font-bold mb-4">
+                <i class="fa-solid fa-tachometer-alt"></i>
+                <span>COPA DO MUNDO 2026</span>
+            </div>
+            <h1 class="title-font text-6xl md:text-7xl font-black tracking-tighter leading-none">
+                RAS PADINHA<br>
+                <span class="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-clip-text text-transparent">DA COPA</span>
+            </h1>
+            <p class="mt-3 text-2xl text-zinc-300 font-medium">Encontre os 3 aviões e ganhe uma viagem para assistir a Copa 2026 ao vivo!</p>
+        </div>
+        <div class="max-w-[620px] mx-auto">
+            <div class="scratch-card rounded-3xl p-6 md:p-8 border border-zinc-700">
+                <div class="flex items-center justify-between mb-5">
+                    <div>
+                        <div class="flex items-center gap-x-2">
+                            <i class="fa-solid fa-hand-pointer text-yellow-400 text-xl"></i>
+                            <span class="font-semibold text-lg">Arranhe as áreas prateadas</span>
+                        </div>
+                        <p class="text-sm text-zinc-400 mt-0.5">Toque e arraste o dedo/mouse para revelar</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xs text-zinc-400">PROGRESSO</div>
+                        <div id="progress-text" class="font-mono text-2xl font-bold text-emerald-400">0/9</div>
+                    </div>
+                </div>
+                <div id="scratch-grid" class="grid grid-cols-3 gap-3 p-4 bg-zinc-900 rounded-2xl border border-zinc-700"></div>
+                <div class="mt-5 text-center">
+                    <div class="inline-flex items-center gap-x-2 text-sm bg-zinc-900 px-4 py-2 rounded-2xl border border-zinc-700">
+                        <i class="fa-solid fa-plane text-yellow-400"></i>
+                        <span class="font-medium">3 ✈️ = <span class="text-yellow-400 font-bold">VIAGEM PARA A COPA 2026</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-[620px] mx-auto mt-8 bg-zinc-900 border border-zinc-800 rounded-3xl p-6">
+            <h3 class="font-semibold text-xl mb-4 flex items-center gap-x-2">
+                <i class="fa-solid fa-gift text-emerald-400"></i>
+                Como participar
+            </h3>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div class="flex gap-x-3">
+                    <div class="w-6 h-6 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center text-xs font-bold mt-0.5">1</div>
+                    <div>Compre R$ 150 ou mais na <span class="font-semibold">Click Vest Lingerie</span></div>
+                </div>
+                <div class="flex gap-x-3">
+                    <div class="w-6 h-6 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center text-xs font-bold mt-0.5">2</div>
+                    <div>Receba sua raspadinha física ou código digital</div>
+                </div>
+                <div class="flex gap-x-3">
+                    <div class="w-6 h-6 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center text-xs font-bold mt-0.5">3</div>
+                    <div>Arranhe aqui ou na loja e boa sorte!</div>
+                </div>
+                <div class="flex gap-x-3">
+                    <div class="w-6 h-6 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center text-xs font-bold mt-0.5">4</div>
+                    <div>Encontrei os 3 aviões? <span class="font-semibold text-yellow-400">Entre em contato!</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center mt-8 max-w-[620px] mx-auto">
+            <a href="https://wa.me/5522999604947?text=Oi!%20Quero%20participar%20da%20Raspadinha%20da%20Copa%202026" target="_blank" class="flex-1 bg-emerald-500 hover:bg-emerald-600 transition-colors text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-x-2 text-lg">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Comprar e Participar no WhatsApp</span>
+            </a>
+            <button onclick="resetGame()" class="flex-1 sm:flex-none px-8 py-4 border border-zinc-700 hover:bg-zinc-900 transition-colors rounded-2xl font-semibold flex items-center justify-center gap-x-2">
+                <i class="fa-solid fa-redo"></i>
+                <span>Resetar Raspadinha</span>
+            </button>
+        </div>
+        <p class="text-center text-xs text-zinc-500 mt-6">Promoção válida enquanto durarem os estoques • Consulte regras completas na loja</p>
+    </div>
+    <div id="win-modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+        <div class="win-modal bg-zinc-900 border border-yellow-500/30 max-w-md w-full rounded-3xl p-8 text-center">
+            <div class="mx-auto w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mb-6">
+                <i class="fa-solid fa-trophy text-4xl text-yellow-950"></i>
+            </div>
+            <h2 class="text-4xl font-black tracking-tighter mb-2">PARABÉNS!</h2>
+            <p class="text-2xl font-semibold text-yellow-400 mb-1">Você encontrou os 3 aviões!</p>
+            <p class="text-zinc-300 mb-6">Você ganhou uma viagem para assistir a <span class="font-bold">Copa do Mundo 2026 ao vivo</span>!</p>
+            <div class="bg-zinc-950 border border-zinc-700 rounded-2xl p-5 mb-6 text-left text-sm">
+                <div class="flex justify-between mb-2">
+                    <span class="text-zinc-400">Próximo passo:</span>
+                </div>
+                <div class="font-medium">Entre em contato com a Click Vest Lingerie pelo WhatsApp para resgatar seu prêmio.</div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <a href="https://wa.me/5522999604947?text=Encontrei%20os%203%20aviões%20na%20Raspadinha%20da%20Copa!%20Quero%20resgatar%20meu%20prêmio!" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 transition-colors text-yellow-950 font-bold py-4 rounded-2xl flex items-center justify-center gap-x-2 text-lg">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Resgatar Prêmio no WhatsApp</span>
+                </a>
+                <button onclick="closeWinModal()" class="py-3 text-sm font-medium text-zinc-400 hover:text-white transition-colors">Fechar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const GRID_SIZE = 3;
+        const PANEL_SIZE = 110;
+        const WINNING_PANELS = [2, 4, 7];
+        const SYMBOLS = ['⚽','🇧🇷','❤️','⭐','🏆','✨','🍀','🎉','🎁'];
+        let panels = [];
+        let revealedCount = 0;
+        let winningRevealed = 0;
+
+        function createPanel(index) {
+            const container = document.createElement('div');
+            container.className = 'panel rounded-2xl overflow-hidden relative';
+            container.style.width = `${PANEL_SIZE}px`;
+            container.style.height = `${PANEL_SIZE}px`;
+
+            const canvas = document.createElement('canvas');
+            canvas.width = PANEL_SIZE;
+            canvas.height = PANEL_SIZE;
+            canvas.className = 'w-full h-full block';
+            container.appendChild(canvas);
+
+            const ctx = canvas.getContext('2d', { alpha: true });
+            const isWinning = WINNING_PANELS.includes(index);
+            const symbol = isWinning ? '✈️' : SYMBOLS[index % SYMBOLS.length];
+
+            const panelData = {
+                canvas,
+                ctx,
+                index,
+                isWinning,
+                symbol,
+                isRevealed: false,
+                scratchProgress: 0
+            };
+
+            drawScratchLayer(panelData);
+
+            let isDrawing = false;
+            const startScratch = (e) => {
+                isDrawing = true;
+                scratch(panelData, e);
+            };
+            const doScratch = (e) => {
+                if (!isDrawing) return;
+                scratch(panelData, e);
+            };
+            const endScratch = () => {
+                if (!isDrawing) return;
+                isDrawing = false;
+                checkIfFullyScratched(panelData);
+            };
+
+            canvas.addEventListener('pointerdown', (e) => {
+                e.preventDefault();
+                canvas.setPointerCapture(e.pointerId);
+                startScratch(e);
+            });
+            canvas.addEventListener('pointermove', doScratch);
+            canvas.addEventListener('pointerup', endScratch);
+            canvas.addEventListener('pointercancel', endScratch);
+            canvas.addEventListener('pointerleave', endScratch);
+
+            panels.push(panelData);
+            return container;
+        }
+
+        function drawScratchLayer(panel) {
+            const { ctx, canvas } = panel;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#94a3b8';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = '#64748b';
+            ctx.lineWidth = 1.5;
+            for (let i = 0; i < 16; i++) {
+                ctx.beginPath();
+                ctx.moveTo(Math.random() * canvas.width, 0);
+                ctx.lineTo(Math.random() * canvas.width, canvas.height);
+                ctx.stroke();
+            }
+            const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            grad.addColorStop(0, 'rgba(255,255,255,0.45)');
+            grad.addColorStop(0.5, 'rgba(255,255,255,0.12)');
+            grad.addColorStop(1, 'rgba(255,255,255,0.25)');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#475569';
+            ctx.font = 'bold 13px Inter, system-ui';
+            ctx.textAlign = 'center';
+            ctx.fillText('RASPE', canvas.width / 2, canvas.height / 2 + 5);
+        }
+
+        function scratch(panel, e) {
+            const { ctx, canvas } = panel;
+            if (panel.isRevealed) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = (e.clientX - rect.left) * (canvas.width / rect.width);
+            const y = (e.clientY - rect.top) * (canvas.height / rect.height);
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(x + 10, y - 6, 10, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalCompositeOperation = 'source-over';
+            panel.scratchProgress += 2.1;
+            if (panel.scratchProgress > 40 && !panel.isRevealed) {
+                revealSymbol(panel);
+            }
+        }
+
+        function checkIfFullyScratched(panel) {
+            if (panel.isRevealed) return;
+            if (panel.scratchProgress > 32) {
+                revealSymbol(panel);
+            }
+        }
+
+        function revealSymbol(panel) {
+            if (panel.isRevealed) return;
+            const { ctx, canvas, symbol, isWinning } = panel;
+            panel.isRevealed = true;
+            revealedCount++;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = isWinning ? '#fefce8' : '#f1e7ff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.font = '52px system-ui, Apple Color Emoji';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(symbol, canvas.width / 2, canvas.height / 2 - 8);
+            ctx.strokeStyle = isWinning ? '#eab308' : '#64748b';
+            ctx.lineWidth = 6;
+            ctx.strokeRect(4, 4, canvas.width - 8, canvas.height - 8);
+            ctx.fillStyle = isWinning ? '#854d0e' : '#334155';
+            ctx.font = '700 11px Inter, system-ui';
+            ctx.fillText(isWinning ? 'AVIÃO!' : 'TENTE OUTRA', canvas.width / 2, canvas.height - 14);
+            updateProgress();
+            if (isWinning) {
+                winningRevealed++;
+                createConfetti(canvas);
+                if (winningRevealed === 3) {
+                    setTimeout(showWinModal, 650);
+                }
+            }
+        }
+
+        function updateProgress() {
+            const progressEl = document.getElementById('progress-text');
+            progressEl.textContent = `${revealedCount}/9`;
+            if (revealedCount === 9) {
+                progressEl.classList.add('text-yellow-400');
+            } else {
+                progressEl.classList.remove('text-yellow-400');
+            }
+        }
+
+        function createConfetti(canvas) {
+            const rect = canvas.getBoundingClientRect();
+            const colors = ['#FFD700', '#009739', '#ffffff'];
+            for (let i = 0; i < 18; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                particle.style.left = `${rect.left + Math.random() * rect.width}px`;
+                particle.style.top = `${rect.top + Math.random() * rect.height}px`;
+                particle.style.width = `${Math.random() * 8 + 4}px`;
+                particle.style.height = `${Math.random() * 8 + 4}px`;
+                particle.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.opacity = '0.95';
+                particle.style.zIndex = '9999';
+                particle.style.pointerEvents = 'none';
+                particle.style.transition = 'transform 1s ease-out, opacity 1s ease-out';
+                document.body.appendChild(particle);
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 120 + Math.random() * 40;
+                const xEnd = Math.cos(angle) * distance;
+                const yEnd = Math.sin(angle) * distance + 10;
+                requestAnimationFrame(() => {
+                    particle.style.transform = `translate(${xEnd}px, ${yEnd}px)`;
+                    particle.style.opacity = '0';
+                });
+                setTimeout(() => particle.remove(), 1200);
+            }
+        }
+
+        function showWinModal() {
+            const modal = document.getElementById('win-modal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeWinModal() {
+            const modal = document.getElementById('win-modal');
+            modal.classList.add('hidden');
+        }
+
+        function resetGame() {
+            panels = [];
+            revealedCount = 0;
+            winningRevealed = 0;
+            updateProgress();
+            const scratchGrid = document.getElementById('scratch-grid');
+            scratchGrid.innerHTML = '';
+            closeWinModal();
+            initScratchGrid();
+        }
+
+        function initScratchGrid() {
+            const scratchGrid = document.getElementById('scratch-grid');
+            for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
+                scratchGrid.appendChild(createPanel(i));
+            }
+        }
+
+        initScratchGrid();
+    </script>
+</body>
+</html>
